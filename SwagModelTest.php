@@ -29,12 +29,12 @@ class SwagModelTest extends Plugin
         $blogEntry = $repository->findOneBy(['name' => 'My First entry']);
 
         if (!$blogEntry) {
-            $blogEntry = new BlogEntry("My First entry");
+            $blogEntry = new BlogEntry('My First entry');
             $em->persist($blogEntry);
         } else {
             $blogEntry->increaseViews();
         }
-        
+
         $em->flush($blogEntry);
     }
 
